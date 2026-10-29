@@ -1,0 +1,98 @@
+/* Fonte Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+/* Cores do projeto, todas num lugar só */
+:root {
+  --fundo: #121212;
+  --texto: #f5f5f5;
+  --texto-suave: #a1a1aa;
+  --borda: #2a2a2a;
+  --borda-campo: #3f3f46;
+  --azul: #3b82f6;
+  --verde: #16a34a;
+  --vermelho: #ef4444;
+
+  color-scheme: dark; /* deixa o checkbox e os campos no modo escuro */
+  font-family: 'Inter', system-ui, sans-serif;
+  color: var(--texto);
+  background: var(--fundo);
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+
+/* Área central da página */
+main {
+  max-width: 640px;
+  margin: 48px auto;
+  padding: 0 16px;
+}
+
+/* Header: título, contador e a linha embaixo */
+header {
+  padding-bottom: 16px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--borda);
+}
+h1 { margin: 0 0 6px; font-size: 24px; font-weight: 700; }
+header p { margin: 0; font-size: 13px; color: var(--texto-suave); }
+
+/* Formulário em uma linha só */
+form { display: flex; align-items: center; gap: 24px; margin-bottom: 28px; }
+
+input:not([type='checkbox']) {
+  flex: 1;
+  height: 40px;
+  padding: 0 14px;
+  background: transparent;
+  border: 1px solid var(--borda-campo);
+  border-radius: 6px;
+  color: var(--texto);
+  font: inherit;
+}
+input::placeholder { color: var(--texto-suave); }
+
+label { display: flex; align-items: center; gap: 10px; }
+input[type='checkbox'] { width: 18px; height: 18px; accent-color: var(--verde); }
+
+/* Botão Salvar: fundo azul escuro com borda azul */
+form button {
+  width: 120px;
+  height: 40px;
+  background: rgba(59, 130, 246, 0.12);
+  border: 2px solid var(--azul);
+  border-radius: 6px;
+  color: var(--texto);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Tabela de tarefas */
+table { width: 100%; border-collapse: collapse; }
+th {
+  padding: 0 8px 10px;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--texto-suave);
+  border-bottom: 1px solid var(--borda-campo);
+}
+td { padding: 12px 8px; border-bottom: 1px solid var(--borda); }
+tr:last-child td { border-bottom: none; }
+
+/* Status: cinza quando pendente, verde quando concluída */
+.status { color: var(--texto-suave); }
+.status.concluida { color: var(--verde); font-weight: 600; }
+
+/* Lixeira vermelha, sem fundo */
+.lixeira {
+  padding: 4px;
+  background: none;
+  border: none;
+  color: var(--vermelho);
+  cursor: pointer;
+}
+
+/* Aviso de erro da API */
+.erro { color: var(--vermelho); margin: 12px 0; }
